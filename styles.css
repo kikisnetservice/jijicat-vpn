@@ -89,3 +89,13 @@ footer {
 .footer-text {
   color: #333;
 }
+
+@media screen and (max-width: 767px) {
+  /* styles for mob */
+  body {
+    font-size: 12px;
+  }
+  .nav-links {
+	gap: 15px;
+  }
+}
