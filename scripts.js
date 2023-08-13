@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const targetSection = document.querySelector(targetId);
     
     window.scrollTo({
-      top: targetSection.offsetTop - 50,
+      top: targetSection.offsetTop - 150,
       behavior: "smooth"
     });
   }
