@@ -1,0 +1,91 @@
+/* Reset some default styles */
+body, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #F4ECE3;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Sections */
+.section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.home-section {
+  background-color: #FAD9C5;
+}
+
+.benefits-section {
+  background-color: #FCE5B2;
+}
+
+.documentation-section {
+  background-color: #FAD9C5;
+}
+
+.faq-section {
+  background-color: #FCE5B2;
+}
+
+.contact-section {
+  background-color: #FAD9C5;
+}
+
+/* Content styling */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+ul {
+  text-align: left;
+  padding-left: 20px;
+}
+
+/* Call to action button */
+.cta-button {
+  display: inline-block;
+  background-color: #F9B7B2;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Footer */
+footer {
+  background-color: #F4ECE3;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-text {
+  color: #333;
+}
