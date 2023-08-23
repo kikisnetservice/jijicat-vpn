@@ -1,14 +1,14 @@
 {
-    "name": "JijiCat Sub",
-    "short_name": "JijiCat Sub",
+    "name": "JijiCat VPN",
+    "short_name": "JijiCat VPN",
     "icons": [
         {
-            "src": "https://cdn.jsdelivr.net/gh/kikisnetservice/jijicat@main/templates/subscription/android-chrome-192x192.png",
+            "src": "https://cdn.jsdelivr.net/gh/kikisnetservice/jijicat@main/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "https://cdn.jsdelivr.net/gh/kikisnetservice/jijicat@main/templates/subscription/android-chrome-512x512.png",
+            "src": "https://cdn.jsdelivr.net/gh/kikisnetservice/jijicat@main/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
