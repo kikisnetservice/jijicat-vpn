@@ -1,1 +1,1 @@
-# jijicat
+# vpn-jijicat
