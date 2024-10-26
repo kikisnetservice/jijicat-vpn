@@ -108,3 +108,41 @@ footer {
 	gap: 15px;
   }
 }
+
+/* Media Queries for High Resolution Design */
+@media screen and (min-width: 768px) {
+  /* styles for tablets and larger devices */
+  body {
+    font-size: 14px;
+  }
+
+  .nav-links {
+    gap: 25px;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* styles for desktops */
+  body {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 100px 0;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  /* styles for desktops */
+  body {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 120px 0;
+  }
+}
