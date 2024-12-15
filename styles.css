@@ -135,14 +135,3 @@ footer {
     padding: 100px 0;
   }
 }
-
-@media screen and (min-width: 1920px) {
-  /* styles for desktops */
-  body {
-    font-size: 18px;
-  }
-
-  .section {
-    padding: 120px 0;
-  }
-}
