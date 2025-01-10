@@ -169,13 +169,36 @@ footer {
   color: #333;
 }
 
-@media screen and (max-width: 767px) {
-  /* styles for mob */
+@media screen and (max-width: 411px) {
+  /* styles for small mob */
+  body {
+    font-size: 12px;
+  }
+  .nav-links {
+	gap: 5px;
+  }
+  .nav-links a {
+  padding: 4px 8px;
+  }
+}
+
+@media screen and (min-width: 411px) {
+  /* styles for small mob */
   body {
     font-size: 12px;
   }
   .nav-links {
 	gap: 10px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  /* styles for mob */
+  body {
+    font-size: 12px;
+  }
+  .nav-links {
+	gap: 15px;
   }
 }
 
