@@ -49,16 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
         link.classList.add("active");
       }
     });
-  });
-  
-  if ('ontouchstart' in window || navigator.maxTouchPoints) {
-    let links = document.querySelectorAll('.nav-links a');
-    links.forEach(link => {
-      link.addEventListener('touchstart', () => {
-        setTimeout(() => {
-          link.classList.remove('hover');
-        }, 100);
+	
+	// Сброс hover при прокрутке на сенсорных экранах
+    if ('ontouchstart' in window || navigator.maxTouchPoints) {
+      navLinks.forEach(link => {
+        link.classList.remove('hover');
       });
-    });
-  }
+    }
+  });
 });
