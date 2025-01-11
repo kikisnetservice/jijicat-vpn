@@ -174,11 +174,14 @@ footer {
   body {
     font-size: 12px;
   }
+  .navbar {
+    padding: 10px 5px;
+  }
   .nav-links {
-	gap: 5px;
+	gap: 3px;
   }
   .nav-links a {
-  padding: 4px 8px;
+    padding: 4px 8px;
   }
 }
 
