@@ -235,12 +235,4 @@ footer {
   .section {
     padding: 100px 0;
   }
-  
-@media (hover: none) and (pointer: coarse) {
-  .nav-links a:hover,
-  .nav-links a:active {
-    background-color: transparent !important;
-    color: inherit !important;
-    }
-  }
 }
