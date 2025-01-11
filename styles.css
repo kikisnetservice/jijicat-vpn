@@ -239,6 +239,7 @@ footer {
 @media (hover: none) {
   .nav-links a {
     background-color: transparent;
+	touch-action: manipulation;
   }
 
   .nav-links a:active {
