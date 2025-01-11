@@ -179,6 +179,9 @@ footer {
   .nav-links {
 	gap: 4px;
   }
+  .promotion-card {
+	margin: 20px;
+  }
 }
 
 @media screen and (min-width: 375px) {
@@ -188,6 +191,9 @@ footer {
   }
   .nav-links {
 	gap: 5px;
+  }
+  .promotion-card {
+	margin: 20px;
   }
 }
 
@@ -215,6 +221,9 @@ footer {
   .section {
     padding: 80px 0;
   }
+  .promotion-card {
+	margin: 20px auto;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -225,5 +234,11 @@ footer {
 
   .section {
     padding: 100px 0;
+  }
+  
+@media (hover: none) {
+  .nav-links a:active {
+    background-color: #F56A79;
+    color: #fff;
   }
 }
