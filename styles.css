@@ -47,12 +47,12 @@ body {
   font-weight: 600;
 }
 
-.nav-links a.hover {
-  background-color: #F56A79;
+.nav-links a:hover {
+  background-color: #F9B7B2;
   color: #fff;
 }
 
-.nav-links a:hover {
+.nav-links a.active {
   background-color: #F56A79;
   color: #fff;
 }
