@@ -176,10 +176,10 @@ footer {
     font-size: 12px;
   }
   .navbar {
-	padding: 10px 0;
+	padding: 10px 4px;
   }
   .nav-links {
-	gap: 5px;
+	gap: 4px;
   }
 }
 
