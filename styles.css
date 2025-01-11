@@ -241,3 +241,9 @@ footer {
     padding: 100px 0;
   }
 }
+
+@media (pointer: coarse) {
+  .nav-links a:hover {
+    background-color: transparent;
+  }
+}
