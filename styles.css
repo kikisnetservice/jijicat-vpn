@@ -41,15 +41,14 @@ body {
   border-radius: 5px;
 }
 
-/* Выделение для ссылки "Акции" */
 .nav-links a[href="#promotions"] {
-  background-color: #F9B7B2; /* Цвет кнопки cta-button */
+  background-color: #F9B7B2;
   color: #fff;
   font-weight: 600;
 }
 
 .nav-links a:hover {
-  background-color: #F56A79; /* Более яркий цвет при наведении */
+  background-color: #F56A79;
   color: #fff;
 }
 
@@ -76,7 +75,7 @@ body {
 }
 
 .promotions-section {
-  background-color: #F3C0B1; /* Фон совпадает с другими секциями */
+  background-color: #F3C0B1;
   padding: 60px 0;
 }
 
@@ -89,14 +88,13 @@ body {
   max-width: 700px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
-  transition: transform 0.3s ease-in-out; /* Плавный переход */
+  transition: transform 0.3s ease-in-out;
 }
 
 .promotion-card:hover {
   animation: wobble 0.6s ease-in-out;
 }
 
-/* Анимация колебания */
 @keyframes wobble {
   0% {
     transform: rotate(0deg);
@@ -130,7 +128,7 @@ body {
 }
 
 .contact-section {
-  background-color: #FAD9C5;
+  background-color: #FCE5B2;
 }
 
 /* Content styling */
