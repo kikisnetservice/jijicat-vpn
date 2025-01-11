@@ -194,7 +194,7 @@ footer {
 }
 
 .dark-mode .nav-links a[href="#promotions"] {
-  background-color: #D89C9A;
+  background-color: #555;
   color: #fff;
   font-weight: 600;
 }
@@ -220,7 +220,7 @@ footer {
     color: #fff;
   }
   .dark-mode .nav-links a:hover {
-    background-color: #D89C9A !important;
+    background-color: #555 !important;
     color: #fff !important;
   }
 }
