@@ -30,5 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
+  document.addEventListener('touchstart', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => link.classList.remove('hover'));
+  });
 
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('touchstart', function() {
+      link.classList.add('hover');
+    });
+  });
 });
