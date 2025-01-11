@@ -245,5 +245,10 @@ footer {
 @media (pointer: coarse) {
   .nav-links a:hover {
     background-color: transparent;
+	color: #333;
+  }
+  .nav-links a.active {
+    background-color: #F56A79;
+    color: #fff;
   }
 }
