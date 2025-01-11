@@ -49,12 +49,5 @@ document.addEventListener("DOMContentLoaded", function () {
         link.classList.add("active");
       }
     });
-	
-	// Сброс hover при прокрутке на сенсорных экранах
-    if ('ontouchstart' in window || navigator.maxTouchPoints) {
-      navLinks.forEach(link => {
-        link.classList.remove('hover');
-      });
-    }
   });
 });

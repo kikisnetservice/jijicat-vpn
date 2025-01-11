@@ -241,3 +241,10 @@ footer {
     padding: 100px 0;
   }
 }
+
+@media (hover: none) {
+  .nav-links a:hover {
+    background-color: transparent;
+    color: inherit;
+  }
+}
