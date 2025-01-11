@@ -47,10 +47,11 @@ body {
   font-weight: 600;
 }
 
-.nav-links a:hover {
-  background-color: #F9B7B2;
-  color: #fff;
-}
+@media (hover: hover) {
+  .nav-links a:hover {
+    background-color: #F9B7B2;
+    color: #fff;
+  }
 
 .nav-links a.active {
   background-color: #F56A79;
@@ -239,12 +240,5 @@ footer {
 
   .section {
     padding: 100px 0;
-  }
-}
-
-@media (hover: none) {
-  .nav-links a:hover {
-    background-color: none;
-    color: inherit;
   }
 }
