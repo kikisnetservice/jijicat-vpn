@@ -30,17 +30,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
-  // Сброс состояния при скролле
-  document.addEventListener('scroll', () => {
-    document.querySelectorAll('.nav-links a:focus, .nav-links a:active').forEach(link => {
-      link.blur();
-    });
-  });
 
-  // Сброс состояния при клике
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      link.blur();
-    });
-  });
 });
