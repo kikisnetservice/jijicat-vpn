@@ -30,11 +30,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
-  document.addEventListener('touchstart', function() {
+  // Функция, которая убирает hover-состояние
+  function removeHover() {
     const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => link.classList.remove('hover'));
-  });
+    navLinks.forEach(link => {
+      link.classList.remove('hover');
+    });
+  }
+  
+  // Слушаем событие скролла на документе
+  document.addEventListener('scroll', removeHover);
 
+  // Слушаем событие касания (для мобильных устройств)
+  document.addEventListener('touchstart', removeHover);
+  
+  // Также добавляем "hover" при касании ссылки
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('touchstart', function() {
       link.classList.add('hover');
