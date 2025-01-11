@@ -241,8 +241,3 @@ footer {
     padding: 100px 0;
   }
 }
-
-@media (pointer: coarse) {
-  .nav-links a {
-    touch-action: manipulation;
-  }

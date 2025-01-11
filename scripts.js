@@ -50,4 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+  
+  if ('ontouchstart' in window || navigator.maxTouchPoints) {
+    let links = document.querySelectorAll('.nav-links a');
+    links.forEach(link => {
+      link.addEventListener('touchstart', () => {
+        setTimeout(() => {
+          link.classList.remove('hover');
+        }, 100);
+      });
+    });
+  }
 });
