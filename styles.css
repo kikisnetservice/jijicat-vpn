@@ -175,8 +175,11 @@ footer {
   body {
     font-size: 12px;
   }
+  .navbar {
+	padding: 10px 0;
+  }
   .nav-links {
-	gap: 1px;
+	gap: 5px;
   }
 }
 
