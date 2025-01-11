@@ -29,6 +29,7 @@ body {
   list-style-type: none;
   display: flex;
   gap: 20px;
+  padding-left: 0;
 }
 
 .nav-links a {
@@ -169,32 +170,23 @@ footer {
   color: #333;
 }
 
-@media screen and (max-width: 411px) {
+@media screen and (max-width: 375px) {
   /* styles for small mob */
   body {
     font-size: 12px;
   }
-  .navbar {
-    padding: 10px 5px;
-  }
   .nav-links {
-	gap: 3px;
+	gap: 1px;
   }
-  .nav-links a {
-    padding: 4px 8px;
-  }
-  ul {
-    padding-left: 5px;
-}
 }
 
-@media screen and (min-width: 411px) {
+@media screen and (min-width: 375px) {
   /* styles for small mob */
   body {
     font-size: 12px;
   }
   .nav-links {
-	gap: 10px;
+	gap: 5px;
   }
 }
 
