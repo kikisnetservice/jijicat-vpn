@@ -243,6 +243,6 @@ footer {
 }
 
 @media (pointer: coarse) {
-  .nav-links a:active {
-    background-color: #F56A79;
+  .nav-links a {
+    touch-action: manipulation;
   }
