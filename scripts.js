@@ -3,7 +3,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const ctaButton = document.querySelector(".cta-button");
   const navbar = document.querySelector(".navbar");
   const sections = document.querySelectorAll(".section");
+  
+  // Функция для переворота кота
+  const flipCat = document.querySelector(".flip-cat");
 
+  flipCat.addEventListener("click", function () {
+    // Сбрасываем трансформацию перед поворотом, чтобы можно было повторно кликать
+    flipCat.style.transition = "none"; // Отключаем плавный переход, чтобы моментально сбросить состояние
+    flipCat.style.transform = "rotate(0deg)"; // Сбрасываем поворот в начальное состояние
+
+    // Даем немного времени на сброс (через setTimeout), а затем выполняем переворот
+    setTimeout(function () {
+      flipCat.style.transition = "transform 0.5s ease-in-out"; // Включаем плавный переход
+      flipCat.style.transform = "rotate(360deg)"; // Поворот на 360 градусов
+    }, 10); // небольшой таймаут, чтобы сбросить состояние
+  });
+  
   navLinks.forEach(link => {
     link.addEventListener("click", smoothScroll);
   });

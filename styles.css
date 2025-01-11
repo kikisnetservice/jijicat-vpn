@@ -175,6 +175,12 @@ footer {
   color: #333;
 }
 
+.flip-cat {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
+
 @media screen and (max-width: 375px) {
   /* styles for small mob */
   body {
