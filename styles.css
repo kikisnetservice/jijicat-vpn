@@ -237,8 +237,16 @@ footer {
   }
   
 @media (hover: none) {
+  .nav-links a {
+    background-color: transparent;
+  }
+
   .nav-links a:active {
     background-color: #F56A79;
     color: #fff;
+  }
+
+  .nav-links a:focus {
+    background-color: transparent;
   }
 }
