@@ -47,13 +47,6 @@ body {
   font-weight: 600;
 }
 
-@media (hover: hover) {
-  .nav-links a:hover {
-    background-color: #F9B7B2;
-    color: #fff;
-  }
-}
-
 .nav-links a.active {
   background-color: #F56A79;
   color: #fff;
@@ -169,6 +162,7 @@ footer {
   background-color: #F4ECE3;
   text-align: center;
   padding: 10px 0;
+  color: #333;
 }
 
 .footer-text {
@@ -183,70 +177,109 @@ footer {
   user-select: none;
 }
 
+/* Dark Mode */
+.dark-mode {
+  background-color: #333;
+}
+
+.dark-mode .navbar,
+.dark-mode footer {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .nav-links a {
+  color: #fff;
+  font-weight: 500;
+}
+
+.dark-mode .nav-links a[href="#promotions"] {
+  background-color: #D89C9A;
+  color: #fff;
+  font-weight: 600;
+}
+
+.dark-mode .nav-links a.active {
+  background-color: #D04C5B !important;
+  color: #fff !important;
+}
+
+.dark-mode .cta-button {
+  background-color: #F9B7B2;
+  color: #fff;
+}
+
+.dark-mode .footer-text {
+  color: #fff;
+}
+
+/* Responsive styles */
+@media (hover: hover) {
+  .nav-links a:hover {
+    background-color: #F9B7B2;
+    color: #fff;
+  }
+  .dark-mode .nav-links a:hover {
+    background-color: #D89C9A !important;
+    color: #fff !important;
+  }
+}
+
 @media screen and (max-width: 375px) {
-  /* styles for small mob */
   body {
     font-size: 12px;
   }
   .navbar {
-	padding: 10px 3px;
+    padding: 10px 3px;
   }
   .nav-links {
-	gap: 4px;
+    gap: 4px;
   }
   .promotion-card {
-	margin: 20px;
+    margin: 20px;
   }
 }
 
 @media screen and (min-width: 375px) {
-  /* styles for small mob */
   body {
     font-size: 12px;
   }
   .nav-links {
-	gap: 5px;
+    gap: 5px;
   }
   .promotion-card {
-	margin: 20px;
+    margin: 20px;
   }
 }
 
 @media screen and (min-width: 480px) {
-  /* styles for mob */
   body {
     font-size: 12px;
   }
   .nav-links {
-	gap: 15px;
+    gap: 15px;
   }
 }
 
-/* Media Queries for High Resolution Design */
 @media screen and (min-width: 768px) {
-  /* styles for tablets and larger devices */
   body {
     font-size: 14px;
   }
-
   .nav-links {
     gap: 20px;
   }
-
   .section {
     padding: 80px 0;
   }
   .promotion-card {
-	margin: 20px auto;
+    margin: 20px auto;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  /* styles for desktops */
   body {
     font-size: 16px;
   }
-
   .section {
     padding: 100px 0;
   }
