@@ -65,18 +65,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Получение IP-адреса
-  if (ipDisplay) {
+  // Получение IP-адреса через Cloudflare
+  function fetchIP() {
     ipDisplay.textContent = "определяю...";
-    fetch("https://api64.ipify.org?format=json")
-      .then(response => {
-        if (!response.ok) throw new Error("Ответ сервера не OK");
-        return response.json();
+    fetch("https://1.1.1.1/cdn-cgi/trace")
+      .then(response => response.text())
+      .then(data => {
+        const ipMatch = data.match(/ip=([\d\.]+)/);
+        ipDisplay.textContent = ipMatch ? ipMatch[1] : "не удалось определить";
       })
-      .then(data => ipDisplay.textContent = data.ip)
-      .catch(error => {
-        console.error("Ошибка при получении IP:", error);
-        ipDisplay.textContent = "неизвестен";
+      .catch(() => {
+        ipDisplay.textContent = "не удалось определить";
+        ipDisplay.classList.add("error");
       });
   }
+
+  if (ipDisplay) fetchIP();
 });
