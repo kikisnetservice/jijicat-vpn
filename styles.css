@@ -15,6 +15,15 @@ body {
   padding: 10px;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+}
+
+.ip-display {
+  margin-right: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  white-space: nowrap;
 }
 
 .navbar-fixed {
@@ -97,21 +106,11 @@ body {
 }
 
 @keyframes wobble {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(2deg);
-  }
-  50% {
-    transform: rotate(-2deg);
-  }
-  75% {
-    transform: rotate(1deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
 }
 
 .promotion-card h3 {
@@ -189,6 +188,10 @@ footer {
   color: #fff;
 }
 
+.dark-mode .ip-display {
+  color: #ccc;
+}
+
 .dark-mode .nav-links a {
   color: #fff;
   font-weight: 500;
@@ -227,61 +230,31 @@ footer {
 }
 
 @media screen and (max-width: 375px) {
-  body {
-    font-size: 12px;
-  }
-  .navbar {
-    padding: 10px 3px;
-  }
-  .nav-links {
-    gap: 4px;
-  }
-  .promotion-card {
-    margin: 20px;
-  }
+  body { font-size: 12px; }
+  .navbar { padding: 10px 3px; }
+  .nav-links { gap: 4px; }
+  .promotion-card { margin: 20px; }
 }
 
 @media screen and (min-width: 375px) {
-  body {
-    font-size: 12px;
-  }
-  .nav-links {
-    gap: 5px;
-  }
-  .promotion-card {
-    margin: 20px;
-  }
+  body { font-size: 12px; }
+  .nav-links { gap: 5px; }
+  .promotion-card { margin: 20px; }
 }
 
 @media screen and (min-width: 480px) {
-  body {
-    font-size: 12px;
-  }
-  .nav-links {
-    gap: 15px;
-  }
+  body { font-size: 12px; }
+  .nav-links { gap: 15px; }
 }
 
 @media screen and (min-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-  .nav-links {
-    gap: 20px;
-  }
-  .section {
-    padding: 80px 0;
-  }
-  .promotion-card {
-    margin: 20px auto;
-  }
+  body { font-size: 14px; }
+  .nav-links { gap: 20px; }
+  .section { padding: 80px 0; }
+  .promotion-card { margin: 20px auto; }
 }
 
 @media screen and (min-width: 1024px) {
-  body {
-    font-size: 16px;
-  }
-  .section {
-    padding: 100px 0;
-  }
+  body { font-size: 16px; }
+  .section { padding: 100px 0; }
 }
