@@ -230,26 +230,23 @@ footer {
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 480px) {
   body { font-size: 12px; }
   .navbar { padding: 10px 3px; }
-  .nav-links { gap: 4px; }
-  .promotion-card { margin: 20px; }
-}
-
-@media screen and (min-width: 375px) {
-  body { font-size: 12px; }
+  .ip-display { display: none !important; }
   .nav-links { gap: 5px; }
   .promotion-card { margin: 20px; }
 }
 
 @media screen and (min-width: 480px) {
   body { font-size: 12px; }
+  .ip-display { display: none !important; }
   .nav-links { gap: 15px; }
 }
 
 @media screen and (min-width: 768px) {
   body { font-size: 14px; }
+  .ip-display { display: unset !important; }
   .nav-links { gap: 20px; }
   .section { padding: 80px 0; }
   .promotion-card { margin: 20px auto; }
