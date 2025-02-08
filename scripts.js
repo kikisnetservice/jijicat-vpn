@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".navbar");
   const footer = document.querySelector("footer");
   const flipCat = document.querySelector(".flip-cat");
-  const ipDisplay = document.querySelector(".ip-display span");
+  const ipDisplayContainer = document.querySelector(".ip-display");
+  const ipDisplay = ipDisplayContainer?.querySelector("span");
 
   // Применение темы
   function applyTheme(theme) {
@@ -65,16 +66,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Получение IP-адреса через Cloudflare
-  if (ipDisplay) {
-    ipDisplay.textContent = "определяю...";
+  if (ipDisplayContainer && ipDisplay) {
+    ipDisplayContainer.style.display = "none";
 
     fetch("https://checkip.amazonaws.com")
       .then(response => response.text())
-      .then(ip => ipDisplay.textContent = ip.trim())
+      .then(ip => {
+        ipDisplay.textContent = ip.trim();
+        ipDisplayContainer.style.display = "block";
+      })
       .catch(() => {
-        ipDisplay.textContent = "неизвестен";
-        ipDisplay.style.color = "#D04C5B";
       });
   }
 });

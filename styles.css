@@ -19,6 +19,7 @@ body {
 }
 
 .ip-display {
+  display: none;
   margin-right: 30px;
   font-size: 14px;
   font-weight: 500;
