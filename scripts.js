@@ -74,8 +74,12 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(ip => {
         ipDisplay.textContent = ip.trim();
         ipDisplayContainer.style.display = "block";
+        setTimeout(() => {
+          ipDisplayContainer.style.opacity = "1";
+        }, 10);
       })
       .catch(() => {
+        ipDisplayContainer.style.display = "none";
       });
-  }
+}
 });
