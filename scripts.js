@@ -66,19 +66,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Получение IP-адреса через Cloudflare
-  function fetchIP() {
+  if (ipDisplay) {
     ipDisplay.textContent = "определяю...";
-    fetch("https://1.1.1.1/cdn-cgi/trace")
+
+    fetch("https://checkip.amazonaws.com")
       .then(response => response.text())
-      .then(data => {
-        const ipMatch = data.match(/ip=([\d\.]+)/);
-        ipDisplay.textContent = ipMatch ? ipMatch[1] : "не удалось определить";
-      })
+      .then(ip => ipDisplay.textContent = ip.trim())
       .catch(() => {
-        ipDisplay.textContent = "не удалось определить";
-        ipDisplay.classList.add("error");
+        ipDisplay.textContent = "неизвестен";
+        ipDisplay.style.color = "#D04C5B";
       });
   }
-
-  if (ipDisplay) fetchIP();
 });
