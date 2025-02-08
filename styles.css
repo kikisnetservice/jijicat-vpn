@@ -234,7 +234,7 @@ footer {
   body { font-size: 12px; }
   .navbar { padding: 10px 3px; }
   .ip-display { display: none !important; }
-  .nav-links { gap: 5px; }
+  .nav-links { gap: 4px; }
   .promotion-card { margin: 20px; }
 }
 
