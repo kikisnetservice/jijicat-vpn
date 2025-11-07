@@ -1,6 +1,6 @@
 {
   "name": "JijiCat VPN",
-  "short_name": "JijiCat VPN",
+  "short_name": "JijiCat",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#FAD9C5",
-  "background_color": "#FAD9C5",
+  "theme_color": "#F4ECE3",
+  "background_color": "#F4ECE3",
   "display": "standalone"
 }
