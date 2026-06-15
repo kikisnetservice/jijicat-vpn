@@ -1,21 +1,35 @@
 /* Reset some default styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body, p, ul, li {
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #F4ECE3;
+  overflow-x: hidden;
 }
 
 /* Navbar */
 .navbar {
   background-color: #F4ECE3;
-  padding: 10px;
+  min-height: 48px;
+  padding: 5px 16px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .ip-display {
@@ -30,7 +44,7 @@ body {
 }
 
 .navbar-fixed {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -39,17 +53,66 @@ body {
   z-index: 1000;
 }
 
+.nav-toggle {
+  display: none;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background-color: #F9B7B2;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: #fff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar.menu-open .nav-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar.menu-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar.menu-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-logo {
+  display: none;
+  color: #333;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 .nav-links {
   list-style-type: none;
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
   gap: 20px;
   padding-left: 0;
 }
 
 .nav-links a {
+  display: inline-block;
   text-decoration: none;
   color: #333;
   font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
   transition: color 0.3s ease, background-color 0.3s ease;
   padding: 5px 10px;
   border-radius: 5px;
@@ -68,6 +131,7 @@ body {
 
 /* Sections */
 .section {
+  scroll-margin-top: calc(var(--navbar-offset, 54px) + 1px);
   padding: 60px 0;
   text-align: center;
 }
@@ -78,6 +142,111 @@ body {
 
 .benefits-section {
   background-color: #FCE5B2;
+}
+
+.plans-section {
+  background-color: #FAD9C5;
+}
+
+.plans-grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.plan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+.plan-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 3px 10px rgba(245, 106, 121, 0.24);
+}
+
+.plan-badge::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  bottom: -40%;
+  left: -70%;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: rotate(18deg);
+  animation: badge-shine 5s ease-in-out infinite;
+}
+
+.plan-badge-test {
+  background: linear-gradient(135deg, #FFB347, #FF7A59);
+  box-shadow: 0 3px 10px rgba(255, 122, 89, 0.26);
+}
+
+.plan-badge-hit {
+  background: linear-gradient(135deg, #F56A79, #D04C5B);
+}
+
+.plan-card h3 {
+  margin-bottom: 6px;
+}
+
+.plan-card p {
+  margin-top: 12px;
+}
+
+.plan-price {
+  margin: 0 0 10px;
+  color: #333;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+.plan-card ul {
+  padding-left: 20px;
+  list-style: disc;
+  margin-top: 10px;
+}
+
+.plan-card li {
+  margin-bottom: 5px;
+}
+
+.plans-footnotes {
+  width: 100%;
+  margin: 32px 0 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(249, 183, 178, 0.45);
+  border-radius: 8px;
+  background-color: rgba(255, 248, 225, 0.52);
+  color: #333;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.plans-footnotes p + p {
+  margin-top: 8px;
+}
+
+.plans-footnotes strong {
+  color: #333;
+  font-weight: 700;
 }
 
 .documentation-section {
@@ -102,11 +271,33 @@ body {
   max-width: 700px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.promotion-card.plan-card {
+  margin: 0;
+  max-width: none;
+}
+
+.promotion-card.plan-card.has-badge {
+  padding-right: 108px;
+}
+
+.promotion-card.plan-card:hover {
+  animation: none;
+  transform: none;
+  border-color: #F56A79;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.12);
 }
 
 .promotion-card:hover {
   animation: wobble 0.6s ease-in-out;
+}
+
+
+@keyframes badge-shine {
+  0%, 70% { left: -70%; }
+  86%, 100% { left: 125%; }
 }
 
 @keyframes wobble {
@@ -139,6 +330,7 @@ body {
 .content {
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 h1, h2, h3 {
@@ -165,8 +357,9 @@ ul {
 footer {
   background-color: #F4ECE3;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px 16px;
   color: #333;
+  line-height: 1.45;
 }
 
 .footer-text {
@@ -196,6 +389,15 @@ footer {
   color: #ccc;
 }
 
+.dark-mode .mobile-logo {
+  color: #fff;
+}
+
+.dark-mode .nav-toggle {
+  background-color: #555;
+}
+
+
 .dark-mode .nav-links a {
   color: #fff;
   font-weight: 500;
@@ -223,37 +425,118 @@ footer {
 
 /* Responsive styles */
 @media (hover: hover) {
+  .nav-toggle:hover,
   .nav-links a:hover {
     background-color: #F9B7B2;
     color: #fff;
   }
+
+  .dark-mode .nav-toggle:hover,
   .dark-mode .nav-links a:hover {
     background-color: #555 !important;
     color: #fff !important;
   }
 }
 
-@media screen and (max-width: 480px) {
-  body { font-size: 12px; }
-  .navbar { padding: 10px 3px; }
+@media screen and (max-width: 640px) {
+  body { font-size: 13px; }
+
+  .navbar {
+    min-height: 48px;
+    justify-content: space-between;
+    padding: 5px 12px;
+  }
+
   .ip-display { display: none !important; }
-  .nav-links { gap: 4px; }
-  .promotion-card { margin: 20px; }
+
+  .mobile-logo { display: inline-block; }
+
+  .nav-toggle { display: inline-flex; }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #F9B7B2;
+    border-radius: 12px;
+    background-color: rgba(255, 248, 225, 0.98);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 1001;
+  }
+
+  .navbar.menu-open .nav-links {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .dark-mode .nav-links {
+    border-color: #555;
+    background-color: rgba(51, 51, 51, 0.98);
+  }
+
+  .section { padding: 48px 0; }
+  .content { padding: 0 14px; }
+  .promotion-card { margin: 16px 0; padding: 18px; }
+  .plans-grid { gap: 16px; margin-top: 16px; }
+  .plans-footnotes { margin-top: 24px; padding: 11px 12px; font-size: 12px; }
+  .plan-card { margin: 0; }
+  .promotion-card.plan-card.has-badge { padding-right: 96px; }
+  footer { padding: 10px 14px; }
 }
 
-@media screen and (min-width: 480px) {
-  body { font-size: 12px; }
-  .nav-links { gap: 15px; }
+@media screen and (min-width: 641px) {
+  body { font-size: 13px; }
+  .navbar { padding: 5px 14px; }
+  .nav-links { gap: 8px; }
+  .nav-links a { padding: 6px 8px; }
+}
+
+@media screen and (min-width: 720px) {
+  .plans-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media screen and (min-width: 768px) {
   body { font-size: 14px; }
+  .navbar { padding: 5px 16px; }
   .nav-links { gap: 20px; }
+  .nav-links a { padding: 5px 10px; }
   .section { padding: 80px 0; }
   .promotion-card { margin: 20px auto; }
+  .plan-card { margin: 0; }
 }
 
 @media screen and (min-width: 1024px) {
   body { font-size: 16px; }
   .section { padding: 100px 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -1,11 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const navLinks = document.querySelectorAll(".nav-links a");
-  const ctaButton = document.querySelector(".cta-button");
+  const navLinks = document.querySelectorAll(".nav-links a, .mobile-logo");
   const navbar = document.querySelector(".navbar");
+  const navToggle = document.querySelector(".nav-toggle");
   const footer = document.querySelector("footer");
   const flipCat = document.querySelector(".flip-cat");
   const ipDisplayContainer = document.querySelector(".ip-display");
   const ipDisplay = ipDisplayContainer?.querySelector("span");
+  const sections = document.querySelectorAll(".section");
+
+  function updateNavbarOffset() {
+    if (!navbar) return;
+    document.documentElement.style.setProperty("--navbar-offset", `${navbar.offsetHeight}px`);
+  }
 
   // Применение темы
   function applyTheme(theme) {
@@ -16,6 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Установка темы
   applyTheme(localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+  updateNavbarOffset();
+
+  if (navbar && "ResizeObserver" in window) {
+    new ResizeObserver(updateNavbarOffset).observe(navbar);
+  }
 
   // Переключение темы
   if (flipCat) {
@@ -33,14 +44,75 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  function setMenuOpen(isOpen) {
+    if (!navbar || !navToggle) return;
+
+    navbar.classList.toggle("menu-open", isOpen);
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+    navToggle.setAttribute("aria-label", isOpen ? "Закрыть меню" : "Открыть меню");
+  }
+
+  function setActiveLink(sectionId) {
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.classList.toggle("active", link.getAttribute("href") === `#${sectionId}`);
+    });
+  }
+
+  function updateActiveSection() {
+    if (!sections.length) return;
+
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+    const marker = window.scrollY + navbarHeight + 2;
+    let currentSection = sections[0].getAttribute("id");
+
+    sections.forEach(section => {
+      if (section.offsetTop <= marker) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    setActiveLink(currentSection);
+  }
+
+  if (navToggle) {
+    navToggle.addEventListener("click", function () {
+      setMenuOpen(navToggle.getAttribute("aria-expanded") !== "true");
+    });
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      setMenuOpen(false);
+    }
+  });
+
+  document.addEventListener("click", function (event) {
+    if (navbar && !navbar.contains(event.target)) {
+      setMenuOpen(false);
+    }
+  });
+
+  window.addEventListener("resize", function () {
+    updateNavbarOffset();
+    if (window.innerWidth > 640) {
+      setMenuOpen(false);
+    }
+    updateActiveSection();
+  });
+
   // Плавный скролл
   if (navLinks.length) {
     navLinks.forEach(link => {
       link.addEventListener("click", function (event) {
+        const href = this.getAttribute("href");
+        if (!href || !href.startsWith("#")) return;
+
         event.preventDefault();
-        const targetSection = document.querySelector(this.getAttribute("href"));
+        const targetSection = document.querySelector(href);
         if (targetSection) {
-          window.scrollTo({ top: targetSection.offsetTop - 40, behavior: "smooth" });
+          setMenuOpen(false);
+          targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          history.pushState(null, "", href);
         }
       });
     });
@@ -50,21 +122,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (navbar) {
     window.addEventListener("scroll", function () {
       navbar.classList.toggle("navbar-fixed", window.scrollY > 0);
-      
-      let currentSection = "";
-      document.querySelectorAll(".section").forEach(section => {
-        if (window.scrollY >= section.offsetTop - 50 && window.scrollY < section.offsetTop + section.offsetHeight) {
-          currentSection = section.getAttribute("id");
-        }
-      });
-
-      if (navLinks.length) {
-        navLinks.forEach(link => {
-          link.classList.toggle("active", link.getAttribute("href").substring(1) === currentSection);
-        });
-      }
-    });
+      updateActiveSection();
+    }, { passive: true });
   }
+
+  updateActiveSection();
 
   if (ipDisplayContainer && ipDisplay) {
     ipDisplayContainer.style.display = "none";
@@ -81,5 +143,5 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch(() => {
         ipDisplayContainer.style.display = "none";
       });
-}
+  }
 });
