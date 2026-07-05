@@ -35,9 +35,11 @@ body {
 .ip-display {
   display: none;
   opacity: 0;
-  margin-right: 30px;
+  align-self: center;
+  margin: 0;
   font-size: 14px;
   font-weight: 500;
+  line-height: 1.2;
   color: #666;
   white-space: nowrap;
   transition: opacity 0.5s ease-in-out;
@@ -102,6 +104,7 @@ body {
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-end;
+  align-items: center;
   gap: 20px;
   padding-left: 0;
 }
@@ -498,12 +501,41 @@ footer {
   color: #333;
   line-height: 1.6;
   text-align: left;
-  white-space: pre-wrap;
   overflow-wrap: anywhere;
 }
 
-.legal-document p + p {
-  margin-top: 12px;
+.legal-document h2 {
+  margin: 30px 0 14px;
+  font-size: 1.45rem;
+  line-height: 1.3;
+}
+
+.legal-document h2:first-child {
+  margin-top: 0;
+}
+
+.legal-document h3 {
+  margin: 22px 0 10px;
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.legal-document p {
+  margin: 0 0 12px;
+  font-weight: 400;
+}
+
+.legal-document ul {
+  margin: 0 0 16px 22px;
+  padding: 0;
+  font-weight: 400;
+}
+
+.legal-document li {
+  margin: 7px 0;
+  padding-left: 2px;
+  font-weight: 400;
 }
 
 .flip-cat {
@@ -613,7 +645,17 @@ footer {
     padding: 5px 12px;
   }
 
-  .ip-display { display: none !important; }
+  .ip-display {
+    width: 100%;
+    margin: 0 0 2px;
+    padding: 8px 12px 10px;
+    border-bottom: 1px solid rgba(51, 51, 51, 0.12);
+    color: #666;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.35;
+    text-align: center;
+  }
 
   .mobile-logo { display: inline-block; }
 
@@ -658,6 +700,11 @@ footer {
   .dark-mode .nav-links {
     border-color: #555;
     background-color: rgba(51, 51, 51, 0.98);
+  }
+
+  .dark-mode .ip-display {
+    border-bottom-color: rgba(255, 255, 255, 0.16);
+    color: #ccc;
   }
 
   .legal-nav-links {
@@ -719,7 +766,10 @@ footer {
   footer { padding: 10px 14px; }
   .footer-links { line-height: 1.6; }
   .legal-main { padding: 28px 14px 44px; }
-  .legal-document { padding: 18px; }
+  .legal-document { padding: 18px; line-height: 1.65; }
+  .legal-document h2 { margin-top: 24px; font-size: 1.25rem; }
+  .legal-document h3 { margin-top: 18px; font-size: 1.05rem; }
+  .legal-document ul { margin-left: 18px; }
 }
 
 @media screen and (min-width: 641px) {
