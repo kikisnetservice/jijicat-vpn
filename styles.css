@@ -562,6 +562,10 @@ footer {
   color: #fff;
 }
 
+.dark-mode .footer-consent {
+  color: #ccc;
+}
+
 .dark-mode .footer-text {
   color: #fff;
 }
