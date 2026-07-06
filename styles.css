@@ -169,7 +169,7 @@ body {
   position: absolute;
   top: 14px;
   right: 14px;
-  padding: 4px 8px;
+  padding: 4px 10px;
   border-radius: 999px;
   color: #fff;
   font-size: 10px;
@@ -179,7 +179,6 @@ body {
   white-space: nowrap;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 3px 10px rgba(245, 106, 121, 0.24);
 }
 
 .plan-badge::after {
@@ -195,17 +194,18 @@ body {
 }
 
 .plan-badge-test {
-  min-width: 126px;
-  padding-right: 10px;
-  padding-left: 10px;
-  font-size: 9px;
-  text-align: center;
-  background: linear-gradient(135deg, #FFB347, #FF7A59);
-  box-shadow: 0 3px 10px rgba(255, 122, 89, 0.26);
+  background: linear-gradient(135deg, #8EDC87, #45B36B);
+  box-shadow: 0 3px 10px rgba(142, 220, 135, 0.24);
 }
 
 .plan-badge-hit {
   background: linear-gradient(135deg, #F56A79, #D04C5B);
+  box-shadow: 0 3px 10px rgba(245, 106, 121, 0.24);
+}
+
+.plan-badge-cotobus {
+  background: linear-gradient(135deg, #F2C66D, #B87935);
+  box-shadow: 0 3px 10px rgba(242, 198, 109, 0.24);
 }
 
 .plan-card h3 {
