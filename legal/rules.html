@@ -1,30 +1,84 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/styles.css?v=1.70">
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="JijiCat VPN" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="description" content="Правила сервиса JijiCat VPN: допустимое использование, персональный доступ и помощь с подключением.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#F4ECE3" data-theme-color>
+  <link rel="canonical" href="https://jijicat.link/legal/rules.html">
+
+  <meta property="og:title" content="Правила сервиса — JijiCat VPN">
+  <meta property="og:description" content="Короткие правила ответственного использования JijiCat VPN.">
+  <meta property="og:image" content="https://jijicat.link/assets/social/jijicat-vpn-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Девушка и чёрный кот Дзидзи на фоне вечернего города">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://jijicat.link/legal/rules.html">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="JijiCat VPN">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=5.1">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png?v=5.1" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-48x48.png?v=5.1" sizes="48x48">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png?v=5.1" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png?v=5.1" sizes="16x16">
+  <link rel="shortcut icon" href="/favicon.ico?v=5.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=5.1">
+  <meta name="apple-mobile-web-app-title" content="JijiCat VPN">
+  <link rel="manifest" href="/site.webmanifest?v=5.1">
+  <link rel="preload" as="font" href="/assets/fonts/onest-cyrillic.woff2" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/styles.css?v=5.1">
+  <link rel="stylesheet" href="/assets/css/print.css?v=5.1" media="print">
+  <script>
+    (() => {
+      const root = document.documentElement;
+      root.classList.add("js");
+      let savedTheme = null;
+      try { savedTheme = localStorage.getItem("jijicat-theme"); } catch (error) { /* Storage may be unavailable. */ }
+      const theme = savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
+        : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      root.dataset.theme = theme;
+      document.querySelector("[data-theme-color]")?.setAttribute("content", theme === "dark" ? "#171519" : "#F4ECE3");
+    })();
+  </script>
+  <script src="/assets/js/scripts.js?v=5.1" defer></script>
   <title>Правила сервиса — JijiCat VPN</title>
 </head>
 <body class="legal-page">
-  <nav class="navbar legal-navbar">
-    <ul class="nav-links legal-nav-links">
-      <li><a href="/">← На главную</a></li>
-    </ul>
-  </nav>
-  <main class="legal-main">
-    <h1>Правила сервиса JijiCat VPN</h1>
-    <div class="legal-meta">
-      <p>Редакция от «8» июля 2026 г.</p>
+  <a class="skip-link" href="#main-content">Перейти к документу</a>
+  <header class="site-header" data-site-header>
+    <div class="header-inner shell">
+      <a class="brand" href="/" aria-label="JijiCat VPN — на главную"><img src="/favicon.svg?v=5.1" width="38" height="38" alt=""><span>JijiCat VPN</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Открыть меню" data-nav-toggle><span></span><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Навигация по документам" data-navigation>
+        <a href="/">На главную</a>
+        <a href="/legal/agreement.html">Соглашение</a>
+        <a href="/legal/rules.html" aria-current="page">Правила</a>
+        <a href="/legal/privacy.html">Конфиденциальность</a>
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Включить тёмную тему" title="Включить тёмную тему" data-theme-toggle>
+          <svg class="theme-icon theme-icon--moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.2 15.1A8.6 8.6 0 0 1 8.9 3.8 8.7 8.7 0 1 0 20.2 15Z"/></svg>
+          <svg class="theme-icon theme-icon--sun" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.6"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6 6 6M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4 6 18M18 6l1.4-1.4"/></svg>
+        </button>
+        <a class="button button--small" href="https://t.me/jijicatbot" target="_blank" rel="noopener noreferrer">Подключиться</a>
+      </nav>
     </div>
-    <article class="legal-document">
-      <h2>Несколько простых правил</h2>
+  </header>
+
+  <main id="main-content">
+    <header class="legal-hero">
+      <div class="legal-hero-inner shell">
+        <div><p class="eyebrow"><span></span> Документы JijiCat</p><h1>Правила сервиса JijiCat VPN</h1></div>
+        <p class="legal-meta">Редакция от «8» июля 2026 г.</p>
+      </div>
+    </header>
+
+    <section class="legal-main">
+      <div class="shell legal-content--narrow">
+        <article class="legal-document">
+      <h2 id="rules">Несколько простых правил</h2>
       <p>1. JijiCat VPN создан для комфортного и безопасного доступа в интернет. Используй сервис ответственно и соблюдай законодательство страны, на территории которой пользуешься Сервисом.</p>
       <p>2. Запрещается использовать Сервис для противоправной деятельности, атак на сторонние ресурсы, распространения вредоносного программного обеспечения, спама и иных действий, нарушающих применимое законодательство или права третьих лиц.</p>
       <p>3. Ссылка на Подписку является персональным средством доступа. Не передавай ее третьим лицам и не публикуй в открытом доступе. При выявлении массового использования одной подписки Администрация вправе ограничить или прекратить доступ к сервису.</p>
@@ -32,13 +86,22 @@
       <p>5. Возврат денежных средств рассматривается в порядке, предусмотренном Пользовательским соглашением, с учетом обстоятельств конкретной ситуации и требований применимого законодательства. Само по себе возникновение проблем, вызванных настройками устройства, используемым программным обеспечением, действиями интернет-провайдера либо ограничениями, не зависящими от Администрации, не является безусловным основанием для возврата денежных средств.</p>
       <p>6. При нарушении настоящих Правил Администрация вправе ограничить или прекратить доступ к сервису без предварительного уведомления.</p>
       <p>7. Если возникли вопросы, нужна помощь с подключением, есть проблема с оплатой или предложения по развитию сервиса — напиши в поддержку. Дзидзи всегда постарается помочь.</p>
-    </article>
+        </article>
+        <nav class="legal-related" aria-label="Другие документы">
+          <a href="/legal/agreement.html">Пользовательское соглашение <span>→</span></a>
+          <a href="/legal/rules.html" aria-current="page">Правила сервиса <span>•</span></a>
+          <a href="/legal/privacy.html">Политика конфиденциальности <span>→</span></a>
+        </nav>
+      </div>
+    </section>
   </main>
-  <footer>
-    <p class="footer-links"><a href="/legal/agreement">Пользовательское соглашение</a> <span aria-hidden="true">•</span> <a href="/legal/rules">Правила сервиса</a> <span aria-hidden="true">•</span> <a href="/legal/privacy">Политика конфиденциальности</a></p>
-    <p class="footer-consent">Используя сервис, вы подтверждаете согласие с Пользовательским соглашением, Правилами сервиса и Политикой конфиденциальности.</p>
-    <p class="footer-text">&copy; <span data-current-year>2026</span> JijiCat VPN. Все права защищены. Не забудь погладить кота перед использованием! <span class="flip-cat" title="Ня">🐈‍⬛</span></p>
+
+  <footer class="site-footer">
+    <div class="shell footer-top">
+      <a class="brand brand--footer" href="/" aria-label="JijiCat VPN — на главную"><img src="/favicon.svg?v=5.1" width="42" height="42" alt=""><span>JijiCat VPN</span></a>
+      <nav class="footer-nav" aria-label="Юридические документы"><a href="/legal/agreement.html">Пользовательское соглашение</a><a href="/legal/rules.html">Правила сервиса</a><a href="/legal/privacy.html">Политика конфиденциальности</a></nav>
+    </div>
+    <div class="shell footer-bottom"><p>© <span data-current-year>2026</span> JijiCat VPN</p><p class="footer-note">Спокойного маршрута <span aria-hidden="true">🐾</span></p></div>
   </footer>
-  <script src="/scripts.js?v=1.57" defer></script>
 </body>
 </html>
