@@ -221,9 +221,26 @@ p {
 }
 
 .eyebrow > span {
+  flex: 0 0 28px;
   width: 28px;
-  height: 1px;
-  background: var(--rose-dark);
+  height: 9px;
+  color: var(--rose-dark);
+  line-height: 9px;
+}
+
+.eyebrow > span::before {
+  display: block;
+  width: 7px;
+  font-family: "Onest", "Segoe UI", system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 9px;
+  letter-spacing: 0;
+  content: "—";
+  position: relative;
+  left: -2px;
+  transform: scaleX(4.666667);
+  transform-origin: left center;
 }
 
 .eyebrow--light {
@@ -231,7 +248,7 @@ p {
 }
 
 .eyebrow--light > span {
-  background: var(--rose-soft);
+  color: var(--rose-soft);
 }
 
 .button {
@@ -753,7 +770,7 @@ p {
   position: relative;
   min-height: clamp(520px, 61vw, 720px);
   overflow: hidden;
-  margin-block: 20px clamp(88px, 9vw, 144px);
+  margin-block: 0 clamp(88px, 9vw, 144px);
   border-radius: var(--radius-lg);
   color: #fff;
   background: var(--night);
@@ -799,7 +816,7 @@ p {
 .cinematic-copy h2 {
   max-width: 8ch;
   color: #fff;
-  font-size: clamp(3.1rem, 7vw, 6.5rem);
+  font-size: clamp(3.1rem, 6vw, 6.5rem);
   letter-spacing: -0.068em;
 }
 
@@ -1378,7 +1395,7 @@ p {
 .final-cta h2 {
   max-width: 7ch;
   color: #fff;
-  font-size: clamp(3.2rem, 6.8vw, 6rem);
+  font-size: clamp(3.2rem, 5.9vw, 6rem);
 }
 
 .final-cta-copy > p:not(.eyebrow) {
@@ -2180,7 +2197,7 @@ p {
   }
 
   .cinematic-copy h2 {
-    font-size: clamp(3.1rem, 14vw, 4.7rem);
+    font-size: clamp(2.9rem, 13.2vw, 4.7rem);
   }
 
   .cinematic-copy p:last-child {
@@ -2309,9 +2326,10 @@ p {
   }
 
   .legal-hero h1 {
-    font-size: clamp(2.15rem, 10vw, 3rem);
+    font-size: clamp(1.75rem, 8.75vw, 3rem);
     line-height: 1.06;
-    overflow-wrap: anywhere;
+    hyphens: auto;
+    overflow-wrap: normal;
   }
 
   .legal-main {
